@@ -1,14 +1,11 @@
 {
-  "functions": {
-    "api/**/*.{js,ts}": {
-      "runtime": "nodejs20.x",
-      "memory": 128,
-      "maxDuration": 10
-    }
-  },
+  "version": 2,
+  "builds": [
+    { "src": "api/**/*.js", "use": "@vercel/node" }
+  ],
   "rewrites": [
     { "source": "/consent/:id", "destination": "/api/consent/:id" },
-    { "source": "/stats/:id",   "destination": "/api/stats/:id"   },
-    { "source": "/:id",         "destination": "/api/:id"         }
+    { "source": "/stats/:id", "destination": "/api/stats/:id" },
+    { "source": "/:id", "destination": "/api/:id" }
   ]
 }
